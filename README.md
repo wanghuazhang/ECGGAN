@@ -17,4 +17,11 @@ This is the code implementation for ECGGAN: An Electrocardiogram Anomaly Detecti
 
 - AIWIN: AIWIN 2021. AIWIN (Autumn) - ECG Intelligent Diagnosis Competition by SID Medical and Fudan University Zhongshan Hospital. http://ailab.aiwin.org.cn/competitions/64#learn_the_details
 
+## Usage
+
+### Data Preparation
+- For ECGGAN full experiemnt on CPSC, AIWIN, and the mixed-set (need to download full dataset first)
+
+    `python preProcess.py`
+
 ## Reference
