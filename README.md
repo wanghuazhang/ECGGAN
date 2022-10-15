@@ -20,8 +20,23 @@ This is the code implementation for ECGGAN: An Electrocardiogram Anomaly Detecti
 ## Usage
 
 ### Data Preparation
-- For ECGGAN full experiemnt on CPSC, AIWIN, and the mixed-set (need to download full dataset first)
+For ECGGAN full experiemnt on CPSC, AIWIN, and the mixed-set (need to download full dataset first)
 
-    `python preProcess.py`
+`python preProcess.py`
+
+```
+put CPSC and AIWIN files under dataset
+
+dataset
+|AIWIN
+| | raw_ECGdata            # The raw ECG files
+| | normal_artificial.csv  # Annotate the noise leads in each normal ECG
+| | reference.csv          # raw ECGs label
+|CPSC
+| | raw_ECGdata            # The raw ECG files
+| | normal_artificial.csv  # Annotate the noise leads in each normal ECG
+| | reference.csv          # raw ECGs label
+
+```
 
 ## Reference

@@ -372,7 +372,7 @@ def read_CPSC_ECG_data_from_folder():
 
     Y_list = [[], [], [], [], [], [], [], [], [], [], []]
 
-    normal_csvPath = "./dataset/CPSC/class1_artificial.csv"
+    normal_csvPath = "./dataset/CPSC/normal_artificial.csv"
     normal_csvFile = open(normal_csvPath, "r")
     normal_reader = csv.reader(normal_csvFile)
 
@@ -393,7 +393,7 @@ def read_CPSC_ECG_data_from_folder():
 
     class_cnt_list[1] = len(Y_list[1])
 
-    label_csvPath = "./dataset/CPSC/REFERENCE.csv"
+    label_csvPath = "./dataset/CPSC/reference.csv"
     label_csvFile = open(label_csvPath, "r")
     label_reader = csv.reader(label_csvFile)
 
@@ -404,7 +404,7 @@ def read_CPSC_ECG_data_from_folder():
     # print("label num: ", len(label_dict))
     # print(label_dict)
 
-    CPSC_data_TrainSet = "./dataset/CPSC/TrainingSet"
+    CPSC_data_TrainSet = "./dataset/CPSC/raw_ECGdata"
     files = os.listdir(CPSC_data_TrainSet)
     random.seed(2022)
     random.shuffle(files) # 打乱顺序
@@ -479,7 +479,7 @@ def read_AIWIN_ECG_data_from_folder():
 
     Y_list = [[], [], [], [], [], [], [], [], [], [], []]
 
-    normal_csvPath = "./dataset/AIWIN/class_0_artificial.csv"
+    normal_csvPath = "./dataset/AIWIN/normal_artificial.csv"
     normal_csvFile = open(normal_csvPath, "r")
     normal_reader = csv.reader(normal_csvFile)
 
@@ -500,7 +500,7 @@ def read_AIWIN_ECG_data_from_folder():
 
     class_cnt_list[1] = len(Y_list[1])
 
-    label_csvPath = "./dataset/AIWIN/trainreference.csv"
+    label_csvPath = "./dataset/AIWIN/reference.csv"
     label_csvFile = open(label_csvPath, "r")
     label_reader = csv.reader(label_csvFile)
 
@@ -514,7 +514,7 @@ def read_AIWIN_ECG_data_from_folder():
     # print("label num: ", len(label_dict))
     # print(label_dict)
 
-    AIWIN_data_TrainSet = "./dataset/AIWIN/train"
+    AIWIN_data_TrainSet = "./dataset/AIWIN/raw_ECGdata"
     files = os.listdir(AIWIN_data_TrainSet)
     random.seed(2022)
     random.shuffle(files) # 打乱顺序
