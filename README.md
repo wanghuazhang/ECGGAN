@@ -39,4 +39,8 @@ dataset
 
 ```
 
+### Train the reconstruction model with lead constraint
+`python main.py --mode train_CGAN --dataset CPSC --val_fold 9 --test_fold 10`
+
+
 ## Reference

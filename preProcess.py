@@ -272,8 +272,7 @@ def get_Beat_Generate_dataset_Extract_beat_and_lead_label_from_npdata(dataset_fo
             try:
                 ECG_leadList = ECG_crop(ECG_leadList, avg_length=5000)
                 beat_cnt = []
-                beat_split_index, beat_padding_index, ECG_ll, ECG_rr = get_index_from_recording_12_lead(ECG_leadList,
-                                                                                                        noise_leadID_list=None)
+                beat_split_index, beat_padding_index, ECG_ll, ECG_rr = get_index_from_recording_12_lead(ECG_leadList, noise_leadID_list=None)
 
                 for lead_index in range(12):
                     tmp_x = get_beat_from_recording_by_index(ECG_leadList[lead_index], beat_split_index)
@@ -318,8 +317,7 @@ def get_Beat_Generate_dataset_Extract_beat_and_lead_label_from_npdata(dataset_fo
             try:
                 ECG_leadList = ECG_crop(ECG_leadList, avg_length=5000)
 
-                beat_split_index, beat_padding_index, ECG_ll, ECG_rr = get_index_from_recording_12_lead(ECG_leadList,
-                                                                                                        noise_leadID_list=None)
+                beat_split_index, beat_padding_index, ECG_ll, ECG_rr = get_index_from_recording_12_lead(ECG_leadList, noise_leadID_list=None)
 
                 for lead_index in range(12):
                     tmp_x = get_beat_from_recording_by_index(ECG_leadList[lead_index], beat_split_index)
@@ -363,6 +361,7 @@ def get_Beat_Generate_dataset_Extract_beat_and_lead_label_from_npdata(dataset_fo
 
     else:
         print(str(os.path.join(dataset_folder, "normal_beat_Generate_lead_list_X.npy")) + " exists")
+
 
 def read_CPSC_ECG_data_from_folder():
     # 构造整个CPSC数据的X和Y，并按照Stratified Sampling划分10折
@@ -628,7 +627,7 @@ def mix_CPSC_AIWIN_abnormal_from_CPSC_AIWIN():
         val_fold = val_fold_list[fold_index]
         test_fold = test_fold_list[fold_index]
 
-        data_folder = "./experiment/{}/dataset_val={}_test={}".format("CPSC_AIWIN_abnormal_from_CPSC_AIWIN", val_fold, test_fold)
+        data_folder = "./experiment/{}/dataset_val={}_test={}".format("Mixed-set", val_fold, test_fold)
         CPSC_data_folder = "./experiment/{}/dataset_val={}_test={}".format("CPSC", val_fold, test_fold)
         AIWIN_data_folder = "./experiment/{}/dataset_val={}_test={}".format("AIWIN", val_fold, test_fold)
         print(data_folder)
