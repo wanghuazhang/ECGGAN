@@ -50,8 +50,3 @@ We split the normal and abnormal ECGs in the dataset into 10 folds with equal pr
 ### Train and test the anomaly detection module
 `python main.py --mode "anomaly_detection_module" --dataset "CPSC" --val_fold 9 --test_fold 10`
 
-
-## Reference
-```
-
-```
