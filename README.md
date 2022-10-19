@@ -38,9 +38,20 @@ dataset
 | | reference.csv          # raw ECGs label
 
 ```
+### Train and test ECGGAN framework
+We split the normal and abnormal ECGs in the dataset into 10 folds with equal probability, and perform 8: 1: 1 split for training, validation and testing respectively.
+
+`python main.py --mode "ECGGAN" --dataset "CPSC" --val_fold 9 --test_fold 10`
+
 
 ### Train the reconstruction model with lead constraint
-`python main.py --mode train_CGAN --dataset CPSC --val_fold 9 --test_fold 10`
+`python main.py --mode "reconstruction_model" --dataset "CPSC" --val_fold 9 --test_fold 10`
+
+### Train and test the anomaly detection module
+`python main.py --mode "anomaly_detection_module" --dataset "CPSC" --val_fold 9 --test_fold 10`
 
 
 ## Reference
+```
+
+```

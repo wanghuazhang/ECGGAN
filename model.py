@@ -11,13 +11,10 @@ from sklearn import metrics, preprocessing
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from torch import optim
-from torch.utils.data import dataloader, TensorDataset, DataLoader
-import tensorwatch as tw
-from torchviz import make_dot
-import hiddenlayer as h
+from torch.utils.data import dataloader, TensorDataset
 from net import weights_init, Generator_CGAN, Discriminator_CGAN
 from preProcess import get_beat_from_recording_by_index, get_index_from_recording_12_lead
-from utils import read_mat, beats_show, show_heat_from_beat, ECG_crop
+from utils import read_mat, beats_show, show_heat_from_beat
 
 
 class MyGAN():
@@ -655,14 +652,6 @@ class MyGAN():
 
         data_x, data_y, beat_split_index, beat_padding_index, ECG_ll, ECG_rr = self.ECG_split_to_beats(
             ECG_leadList=ECG_leadList, label=label, isShow=True, beat_gen_normalize_mode=beat_gen_normalize_mode)
-        exit()
-        # if beat_gen_normalize_mode == "Beat_normal":
-        #     for i in range(12): # 12 lead
-        #         print(data_x[i].shape)
-        #         for j in range(data_x[i].shape[0]):
-        #             for k in range(self.opt.nc):
-        #                 print(data_x[i][j][k].shape)
-        #                 data_x[i][j][k] = self.normalize(data_x[i][j][k])
 
         if isLoss:
             gen_data_x, g_label_loss, g_feature_loss, g_gen_loss = self.gen_beat(data_x, data_y, isShow=False,
